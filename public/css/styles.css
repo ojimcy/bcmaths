@@ -832,3 +832,17 @@ body {
     .single-product-price {
       margin-right: 60px;
     }
+
+   .social_icon_footer {
+      padding: 40px 0;
+    }
+    
+   .social_icon_footer a {
+      color: #333;
+    }
+    
+   .social_icon_footer .social:hover {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }

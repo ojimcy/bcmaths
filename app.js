@@ -31,7 +31,7 @@ app.use('/', require('./routes/index'))
 
 app.use('/buy', require('./routes/index'))
 app.use('/books', require('./routes/index'))
-app.use('/about', require('./routes/index'))
+app.use('/author', require('./routes/index'))
 app.use('/contact', require('./routes/index'))
 
 
