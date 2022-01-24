@@ -6,7 +6,8 @@ const Handlebars = require('handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 //database
-const db = require('./config/db')
+const db = require('./config/db');
+const router = require('./routes');
 
 
 //test DB
@@ -15,13 +16,25 @@ db.authenticate()
 .catch(err => console.log('Error: ' + err));
 
 
-
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Home')
-})
+//Handlebars
+app.engine('.hbs', engine({defaltLayout: 'layout', handlebars: allowInsecurePrototypeAccess (Handlebars), extname: '.hbs'}));
+app.set('view engine', '.hbs');
 
-const PORT = process.env.PORT || 8080;
+// set static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+// Home route
+app.use('/', require('./routes/index'))
+
+app.use('/buy', require('./routes/index'))
+app.use('/books', require('./routes/index'))
+app.use('/about', require('./routes/index'))
+app.use('/contact', require('./routes/index'))
+
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
