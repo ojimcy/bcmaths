@@ -9,23 +9,23 @@
             <h2 class="special-title special-heading-letter">Buy</h2>
           </div>
 
-          <form class="login" method="post">
+          <form class="login" method="post" action="/books/buy">
             <p
               class="
                 woocommerce-form-row woocommerce-form-row--wide
                 form-row form-row-wide
               "
             >
-              <label for="name"
+              <label for="full_name"
                 >Name&nbsp;<span class="required">*</span></label
               >
               <input
                 type="text"
-                name="name"
-                id="name"
+                name="full_name"
+                id="full_name"
                 autocomplete="name"
-                value=""
                 placeholder="Enter your full name"
+                required
               />
             </p>
             <p
@@ -43,7 +43,8 @@
                   type="text"
                   name="phone_number"
                   id="phone_number" 
-                  placeholder="Enter Phone Number"/><span class="show-password-input"></span
+                  placeholder="Enter Phone Number"
+                  required/><span class="show-password-input"></span
               ></span>
             </p>
             <p
@@ -52,12 +53,13 @@
                 form-row form-row-wide
               "
             >
-              <label for="states"
+              <label for="state"
                 >State&nbsp;<span class="required">*</span></label
               >
-              <span class="password-input"
+              <span class="select-input"
                 >
-                <select>
+                <select name="state" required>
+                  <option value={{state}}></option>
                     <option disabled selected>Select State</option>
                     <option value="Abia">Abia</option>
                     <option value="Adamawa">Adamawa</option>
@@ -105,16 +107,17 @@
                 form-row form-row-wide
               "
             >
-              <label for="phone_number"
+              <label for="delivery_address"
                 >Address&nbsp;<span class="required">*</span></label
               >
               <span class="address-input"
                 ><input
                   class="woocommerce-Input woocommerce-Input--text input-text"
                   type="text"
-                  name="address"
-                  id="address" 
-                  placeholder="Enter Your Delivery Address"/><span class="show-address-input"></span
+                  name="delivery_address"
+                  id="delivery_address" 
+                  placeholder="Enter Your Delivery Address"
+                  required/><span class="show-address-input"></span
               ></span>
             </p>
 
@@ -125,12 +128,12 @@
                 form-row form-row-wide
               "
             >
-              <label for="states"
+              <label for="book_title"
                 >Books&nbsp;<span class="required">*</span></label
               >
               <span class="password-input"
                 >
-                <select>
+                <select name="book_title" required>
                     <option disabled selected>Select Book</option>
                     <option value="Abia">Best Choice Mathematics JSS</option>
                     <option value="Adamawa">Best Choice Mathematics JSS1</option>
@@ -161,16 +164,6 @@
             </p>
 
             <p class="form-row">
-              <input
-                type="hidden"
-                id="woocommerce-login-nonce"
-                name="woocommerce-login-nonce"
-                value="854ba950b7"
-              /><input
-                type="hidden"
-                name="_wp_http_referer"
-                value="/odrin/demo1/my-account/?redirect-to=http://subsolardesigns.com/odrin/demo1/books-panel/"
-              />
               <input
                 type="submit"
                 class="woocommerce-Button button"
