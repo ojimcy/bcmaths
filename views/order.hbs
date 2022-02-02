@@ -1,0 +1,37 @@
+
+<table class="table table-striped">
+<thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">State</th>
+      <th scope="col">City</th>
+      <th scope="col">Delivery Address</th>
+      <th scope="col">Book Title</th>
+      <th scope="col">Copies</th>
+      <th scope="col">Order Date</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  {{#each orders}}
+  <tbody>
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{full_name}}</td>
+      <td>{{phone_number}}</td>
+      <td>{{state}}</td>
+      <td>{{city}}</td>
+      <td>{{delivery_address}}</td>
+      <td>{{book_title}}</td>
+      <td>{{copies}}</td>
+      <td>{{createdAt}}</td>
+      <td>{{status}}</td>
+    </tr>
+  </tbody>
+  {{else}}
+<p>No order</p>
+{{/each}}
+</table>
+
+

@@ -5984,6 +5984,7 @@
     vertical-align: middle; }
     .navigation-logo a {
       display: inline-block;
+      margin-right: 390px;
       padding: 27px 0px; }
       .navigation-logo a img {
         max-height: 75px;
@@ -11220,4 +11221,8 @@
 
   .p-price {
     margin-right: 60px !important;
+  }
+
+  .small_img img {
+    min-height: 400px !important;
   }

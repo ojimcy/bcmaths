@@ -7,9 +7,10 @@
 
           <div class="SpecialHeading mb-100">
             <h2 class="special-title special-heading-letter">Buy</h2>
+            <p>Kindly fill the form below to place your order.</p>
           </div>
 
-          <form class="login" method="post" action="/books/buy">
+          <form class="login" method="POST" action="/books/buy">
             <p
               class="
                 woocommerce-form-row woocommerce-form-row--wide
@@ -59,7 +60,7 @@
               <span class="select-input"
                 >
                 <select name="state" required>
-                  <option value={{state}}></option>
+                  <option></option>
                     <option disabled selected>Select State</option>
                     <option value="Abia">Abia</option>
                     <option value="Adamawa">Adamawa</option>
@@ -159,7 +160,8 @@
                   type="number"
                   name="number_of_copies"
                   id="number_of_copies" 
-                  placeholder="Number of Copies"/><span class="show-password-input"></span
+                  placeholder="Number of Copies"
+                  /><span class="show-password-input"></span
               ></span>
             </p>
 
