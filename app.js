@@ -11,7 +11,7 @@ const db = require('./config/db');
 
 //test DB
 db.authenticate()
-.then(() => console.log('Database connected'))
+.then(() => console.log('Database connected...'))
 .catch(err => console.log('Error: ' + err));
 
 
@@ -34,12 +34,11 @@ app.use('/', require('./routes/index'))
 app.use('/author', require('./routes/index'))
 app.use('/contact', require('./routes/index'))
 
-app.use('/books', require('./routes/orders'))
+app.use('/books', require('./routes/index'))
 app.use('/books/buy', require('./routes/index'))
 
-app.use('/admin', require('./routes/index'))
+app.use('/order', require('./routes/index'))
 
-app.use('/order', require('./routes/orders'))
 
 
 const PORT = process.env.PORT || 8080;

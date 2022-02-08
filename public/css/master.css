@@ -5987,7 +5987,7 @@
       margin-right: 390px;
       padding: 27px 0px; }
       .navigation-logo a img {
-        max-height: 75px;
+        max-height: 24px;
         margin-top: -15px;
         margin-bottom: -15px; }
     .navigation-logo h1 {
@@ -6003,7 +6003,7 @@
   
   .main-navigation-menu {
     display: table-cell;
-    padding: 0 20px;
+    padding: 0 222px;
     text-transform: uppercase;
     z-index: 100; }
     .main-navigation-menu li {
