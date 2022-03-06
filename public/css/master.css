@@ -8949,7 +8949,8 @@
             perspective: 1200px; }
     .PageFlipBook a, .PageFlipBook .has-edge {
       transition: .2s;
-      display: inline-block; }
+      display: inline-block;
+      cursor: default; }
     .PageFlipBook .page-flip-book-ribbon {
       position: absolute;
       top: 40%;

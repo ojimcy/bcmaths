@@ -36,11 +36,12 @@ app.use('/contact', require('./routes/index'))
 
 app.use('/books', require('./routes/index'))
 app.use('/books/buy', require('./routes/index'))
+app.use('/buy', (req, res) => res.render('buy', {layout: 'dashboard'}))
 
 app.use('/order', require('./routes/index'))
 
 
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5050;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
