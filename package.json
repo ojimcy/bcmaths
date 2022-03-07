@@ -2,10 +2,10 @@
   "name": "bcmaths",
   "version": "1.0.0",
   "description": "An application for sale of bestchoice Mathematics",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "engines" : { 
+    "npm" : "7.0.0",
+    "node" : "16.0.0"
   }
 }
