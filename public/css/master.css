@@ -5983,8 +5983,8 @@
     display: table-cell;
     vertical-align: middle; }
     .navigation-logo a {
-      display: inline-block;
-      margin-right: 390px;
+      display: inline-block;;
+      margin-right: 334px;
       padding: 27px 0px; }
       .navigation-logo a img {
         max-height: 24px;
