@@ -44,6 +44,7 @@ router.get('/order', (req, res) => {
         })
         .catch(err => console.log(err))
 })
+router.get('/register', (req, res) => res.render('register'));
 
 
 module.exports = router;
