@@ -1,9 +1,15 @@
 const Sequelize = require('sequelize');
 const db =  require('../config/db');
 
-const Order = db.define('order', {
+const User = db.define('user', {
     full_name: {
         type: Sequelize.STRING
+    },
+    email : {
+        type: Sequelize.STRING
+    },
+    password : {
+        type: Sequelize.TEXT
     },
     phone_number: {
         type: Sequelize.STRING
@@ -11,18 +17,6 @@ const Order = db.define('order', {
     state: {
         type: Sequelize.STRING
     },
-    city: {
-        type: Sequelize.STRING
-    },
-    delivery_address: {
-        type: Sequelize.STRING
-    },
-    book_title: {
-        type: Sequelize.STRING
-    },
-    copies: {
-        type: Sequelize.INTEGER
-    },
 })
 
-module.exports = Order;
+module.exports = User;

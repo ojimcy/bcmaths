@@ -37,7 +37,11 @@ app.use('/contact', require('./routes/index'))
 
 app.use('/books', require('./routes/index'))
 app.use('/books/buy', require('./routes/index'))
-app.use('/buy', (req, res) => res.render('buy', {layout: 'dashboard'}))
+
+app.use('/buy', require('./routes/index'))
+
+app.use('/register', require('./routes/index'))
+app.use('/login', require('./routes/index'))
 
 app.use('/order', require('./routes/index'))
 
