@@ -5983,10 +5983,11 @@
     display: table-cell;
     vertical-align: middle; }
     .navigation-logo a {
-      display: inline-block;
+      display: inline-block;;
+      margin-right: 334px;
       padding: 27px 0px; }
       .navigation-logo a img {
-        max-height: 75px;
+        max-height: 24px;
         margin-top: -15px;
         margin-bottom: -15px; }
     .navigation-logo h1 {
@@ -6002,7 +6003,7 @@
   
   .main-navigation-menu {
     display: table-cell;
-    padding: 0 20px;
+    padding: 0 222px;
     text-transform: uppercase;
     z-index: 100; }
     .main-navigation-menu li {
@@ -6880,7 +6881,6 @@
    * ----------------------------------------------------------------------------------------
    */
   .footer {
-    position: fixed;
     padding: 20px 0;
     bottom: 0px;
     left: 0px;
@@ -8948,7 +8948,8 @@
             perspective: 1200px; }
     .PageFlipBook a, .PageFlipBook .has-edge {
       transition: .2s;
-      display: inline-block; }
+      display: inline-block;
+      cursor: default; }
     .PageFlipBook .page-flip-book-ribbon {
       position: absolute;
       top: 40%;
@@ -11220,4 +11221,8 @@
 
   .p-price {
     margin-right: 60px !important;
+  }
+
+  .small_img img {
+    min-height: 400px !important;
   }
