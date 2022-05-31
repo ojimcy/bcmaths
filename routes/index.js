@@ -50,13 +50,13 @@ router.get("/contact", (req, res) =>
   res.render("contact", { layout: "pages" })
 );
 
-router.get("/admin", (req, res) => res.render("order", { layout: "pages" }));
+
 router.get("/order", (req, res) => {
   Order.findAll()
     .then((orders) => {
-      console.log(orders);
       res.render("order", {
         orders,
+        layout: "admin"
       });
     })
     .catch((err) => console.log(err));
