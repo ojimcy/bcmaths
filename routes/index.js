@@ -59,16 +59,16 @@ router.get("/contact", (req, res) =>
   res.render("contact", { layout: "pages" })
 );
 
-router.get("/order", async (req, res) => {
-  try {
-    const orders = await Order.find({ status: "processing" })
-      .sort({ createdAt: "desc" })
-      .lean();
-    res.render("order/order", { orders, layout: "pages" });
-  } catch (err) {
-    console.error(err);
-    res.render("error/500");
-  }
+
+router.get("/order", (req, res) => {
+  Order.findAll()
+    .then((orders) => {
+      res.render("order", {
+        orders,
+        layout: "admin"
+      });
+    })
+    .catch((err) => console.log(err));
 });
 
 router.get("/order/success", (req, res) => {

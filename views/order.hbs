@@ -1,0 +1,38 @@
+<div class="container"  style="overflow-x:auto;"> 
+  <table class="table table-responsive table-bordered">
+    <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>State</th>
+          <th>City</th>
+          <th>Delivery Address</th>
+          <th>Book Title</th>
+          <th>Copies</th>
+          <th>Order Date</th>
+          <th>Status</th>
+        </tr>
+    </thead>
+    {{#each orders}}
+    <tbody>
+      <tr>
+        <th>{{id}}</th>
+        <td>{{full_name}}</td>
+        <td>{{phone_number}}</td>
+        <td>{{state}}</td>
+        <td>{{city}}</td>
+        <td>{{delivery_address}}</td>
+        <td>{{book_title}}</td>
+        <td>{{copies}}</td>
+        <td>{{createdAt}}</td>
+        <td>{{status}}</td>
+      </tr>
+    </tbody>
+    {{else}}
+    <p>No order</p>
+    {{/each}}
+  </table>
+</div>
+
+
