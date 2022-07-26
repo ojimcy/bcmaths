@@ -7162,8 +7162,8 @@
       right: 0;
       bottom: 14%; }
   
-  .BooksPanel .books-panel-container {
-    float: left; }
+  /* .BooksPanel .books-panel-container {
+    float: left; } */
   
   .BooksPanel .books-panel-item.col-sm-4:nth-child(3n+1) {
     clear: left; }
