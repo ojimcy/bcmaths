@@ -12,14 +12,11 @@
 
           <form class="login" method="POST" action="/books/buy">
             <p
-              class="
-                woocommerce-form-row woocommerce-form-row--wide
-                form-row form-row-wide
-              "
+              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
             >
-              <label for="full_name"
-                >Name&nbsp;<span class="required">*</span></label
-              >
+              <label for="full_name">Name&nbsp;<span
+                  class="required"
+                >*</span></label>
               <input
                 type="text"
                 name="full_name"
@@ -30,39 +27,31 @@
               />
             </p>
             <p
-              class="
-                woocommerce-form-row woocommerce-form-row--wide
-                form-row form-row-wide
-              "
+              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
             >
-              <label for="phone_number"
-                >Phone Number&nbsp;<span class="required">*</span></label
-              >
-              <span class="password-input"
-                ><input
+              <label for="phone_number">Phone Number&nbsp;<span
+                  class="required"
+                >*</span></label>
+              <span class="password-input"><input
                   class="woocommerce-Input woocommerce-Input--text input-text"
                   type="text"
                   name="phone_number"
-                  id="phone_number" 
+                  id="phone_number"
                   placeholder="Enter Phone Number"
-                  required/><span class="show-password-input"></span
-              ></span>
+                  required
+                /><span class="show-password-input"></span></span>
             </p>
             <p
-              class="
-                woocommerce-form-row woocommerce-form-row--wide
-                form-row form-row-wide
-              "
+              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
             >
-              <label for="state"
-                >State&nbsp;<span class="required">*</span></label
-              >
-              <span class="select-input"
-                >
+              <label for="state">State&nbsp;<span
+                  class="required"
+                >*</span></label>
+              <span class="select-input">
                 <select name="state" required>
                   <option></option>
-                    <option disabled selected>Select State</option>
-                    {{!-- <option value="Abia">Abia</option>
+                  <option disabled selected>Select State</option>
+                  {{! <option value="Abia">Abia</option>
                     <option value="Adamawa">Adamawa</option>
                     <option value="Akwa Ibom">Akwa Ibom</option>
                     <option value="Anambra">Anambra</option>
@@ -97,89 +86,76 @@
                     <option value="Sokoto">Sokoto</option>
                     <option value="Taraba">Taraba</option>
                     <option value="Yobe">Yobe</option>
-                    <option value="Zamfara">Zamfara</option> --}}
-                    <option value="FCT">Federal Capital Territory(Abuja)</option>
+                    <option value="Zamfara">Zamfara</option> }}
+                  <option value="FCT">Federal Capital Territory(Abuja)</option>
                 </select>
-            </span>
+              </span>
             </p>
-             <p
-              class="
-                woocommerce-form-row woocommerce-form-row--wide
-                form-row form-row-wide
-              "
+            <p
+              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
             >
-              <label for="city"
-                >City&nbsp;<span class="required">*</span></label
-              >
-              <span class="address-input"
-                ><input
+              <label for="city">City&nbsp;<span
+                  class="required"
+                >*</span></label>
+              <span class="address-input"><input
                   class="woocommerce-Input woocommerce-Input--text input-text"
                   type="text"
                   name="city"
-                  id="city" 
+                  id="city"
                   placeholder="Enter Your Delivery City"
-                  required/><span class="show-address-input"></span
-              ></span>
+                  required
+                /><span class="show-address-input"></span></span>
             </p>
             <p
-              class="
-                woocommerce-form-row woocommerce-form-row--wide
-                form-row form-row-wide
-              "
+              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
             >
-              <label for="delivery_address"
-                >Address&nbsp;<span class="required">*</span></label
-              >
-              <span class="address-input"
-                ><input
+              <label for="delivery_address">Address&nbsp;<span
+                  class="required"
+                >*</span></label>
+              <span class="address-input"><input
                   class="woocommerce-Input woocommerce-Input--text input-text"
                   type="text"
                   name="delivery_address"
-                  id="delivery_address" 
+                  id="delivery_address"
                   placeholder="Enter Your Delivery Address"
-                  required/><span class="show-address-input"></span
-              ></span>
+                  required
+                /><span class="show-address-input"></span></span>
             </p>
 
-
             <p
-              class="
-                woocommerce-form-row woocommerce-form-row--wide
-                form-row form-row-wide
-              "
+              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
             >
-              <label for="book_title"
-                >Books&nbsp;<span class="required">*</span></label
-              >
-              <span class="password-input"
-                >
+              <label for="book_title">Books&nbsp;<span
+                  class="required"
+                >*</span></label>
+              <span class="password-input">
                 <select name="book_title[]" required>
-                    <option disabled selected>Select Book</option>
-                    <option value="Best Choice Mathematics for Junior Secondary schools">Best Choice Mathematics for Junior Secondary schools</option>
-                    <option value="Best Choice Mathematics workbook for JSS1">Best Choice Mathematics workbook for JSS1</option>
-                    <option value="Best Choice Mathematics workbook for JSS2">Best Choice Mathematics workbook for JSS2</option>
-                    <option value="Best Choice Mathematics workbook for JSS3">Best Choice Mathematics workbook for JSS3</option>
+                  <option disabled selected>Select Book</option>
+                  <option
+                    value="Best Choice Mathematics for Junior Secondary schools"
+                  >Best Choice Mathematics for Junior Secondary schools</option>
+                  <option value="Best Choice Mathematics workbook for JSS1">Best
+                    Choice Mathematics workbook for JSS1</option>
+                  <option value="Best Choice Mathematics workbook for JSS2">Best
+                    Choice Mathematics workbook for JSS2</option>
+                  <option value="Best Choice Mathematics workbook for JSS3">Best
+                    Choice Mathematics workbook for JSS3</option>
                 </select>
-            </span>
+              </span>
             </p>
             <p
-              class="
-                woocommerce-form-row woocommerce-form-row--wide
-                form-row form-row-wide
-              "
+              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
             >
-              <label for="copies"
-                >Number of Copies&nbsp;<span class="required">*</span></label
-              >
-              <span class="password-input"
-                ><input
+              <label for="copies">Number of Copies&nbsp;<span
+                  class="required"
+                >*</span></label>
+              <span class="password-input"><input
                   class="woocommerce-Input woocommerce-Input--text input-text input-number"
                   type="number"
                   name="copies"
-                  id="copies" 
+                  id="copies"
                   placeholder="Number of Copies"
-                  /><span class="show-password-input"></span
-              ></span>
+                /><span class="show-password-input"></span></span>
             </p>
 
             <p class="form-row">
