@@ -18,10 +18,14 @@ connectDB();
 
 const app = express();
 
+// handlebars helpers
+const { formatDate } = require("./helpers/hbs");
+
 //Handlebars
 app.engine(
   ".hbs",
   engine({
+    helpers: { formatDate },
     defaltLayout: "layout",
     handlebars: allowInsecurePrototypeAccess(Handlebars),
     extname: ".hbs",
@@ -50,7 +54,7 @@ app.use("/login", require("./routes/index"));
 
 app.use("/order", require("./routes/index"));
 
-app.use('order/success', require('./routes/index'))
+app.use("order/success", require("./routes/index"));
 
 const PORT = process.env.PORT;
 

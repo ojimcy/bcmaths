@@ -18,7 +18,7 @@ const OrderSchema = new mongoose.Schema({
     require: true,
   },
   book_title: {
-    type: Array,
+    type: String,
     require: true,
   },
   copies: {

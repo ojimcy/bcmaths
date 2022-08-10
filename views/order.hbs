@@ -1,9 +1,8 @@
-<div class="container" style="overflow-x:auto;">
+<div style="overflow-x:auto; margin: 10px;">
   {{#if orders}}
     <table class="table">
       <thead>
         <tr>
-          <th>Id</th>
           <th>Name</th>
           <th>Phone Number</th>
           <th>State</th>
@@ -17,14 +16,13 @@
       <tbody>
         {{#each orders}}
           <tr>
-            <th>{{_id}}</th>
             <td>{{full_name}}</td>
             <td>{{phone_number}}</td>
             <td>{{state}}</td>
             <td>{{delivery_address}}</td>
             <td>{{book_title}}</td>
             <td>{{copies}}</td>
-            <td>{{createdAt}}</td>
+            <td>{{formatDate createdAt "MMM Do YYYY, h:mm:ss: a"}}</td>
             <td>{{status}}</td>
           </tr>
         {{/each}}
