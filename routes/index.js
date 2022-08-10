@@ -1,16 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Sequelize = require("sequelize");
-const res = require("express/lib/response");
-const Op = Sequelize.Op;
-
-
-const bcrypt = require("bcrypt");
-const cookieParser = require('cookie-parser')
-const {} = require('../jwt/jwt')
 
 const Order = require("../models/Order");
-const User = require("../models/User");
 
 router.get("/", (req, res) => res.render("index"));
 router.get("/books", (req, res) => {
@@ -20,28 +11,15 @@ router.get("/books", (req, res) => {
 router.get("/books/buy", (req, res) => {
   res.render("buy", { layout: "pages" });
 });
-router.post("/books/buy", (req, res) => {
-  let {
-    full_name,
-    phone_number,
-    state,
-    city,
-    delivery_address,
-    book_title,
-    copies,
-  } = req.body;
 
-  Order.create({
-    full_name,
-    phone_number,
-    state,
-    city,
-    delivery_address,
-    book_title,
-    copies,
-  })
-    .then(() => res.redirect("/"))
-    .catch((err) => console.log(err));
+router.post("/books/buy", async (req, res) => {
+  try {
+    await Order.create(req.body);
+    res.redirect("order/success");
+  } catch (err) {
+    console.error(err);
+    render("error/500");
+  }
 });
 
 router.get("/buy", (req, res) => res.render("buy", { layout: "pages" }));
@@ -50,73 +28,20 @@ router.get("/contact", (req, res) =>
   res.render("contact", { layout: "pages" })
 );
 
-router.get("/admin", (req, res) => res.render("order", { layout: "pages" }));
-router.get("/order", (req, res) => {
-  Order.findAll()
-    .then((orders) => {
-      console.log(orders);
-      res.render("order", {
-        orders,
-      });
-    })
-    .catch((err) => console.log(err));
-});
-
-router.get("/register", (req, res) =>
-  res.render("register", { layout: "pages" })
-);
-router.post("/register", (req, res) => {
-  const { full_name, email, phone_number, password, state } = req.body;
-
-  bcrypt.hash(password, 10).then((hash) => {
-    User.create({
-      full_name,
-      email,
-      phone_number,
-      password: hash,
-      state,
-    })
-      .then(() => res.redirect("/"))
-      .catch((err) => {
-        if (err) {
-          res.status(400).json({ error: err });
-        }
-      });
-  });
-});
-
-router.get("/login", (req, res) => res.render("login", { layout: "pages" }));
-router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
-
-  const user = await User.findOne({
-    where: { email: email },
-  });
-
-  if (!user) {
-    res.status(400).json({ error: "User Doesn't Exist" });
+router.get("/order", async (req, res) => {
+  try {
+    const orders = await Order.find({ status: "processing" })
+      .sort({ createdAt: "desc" })
+      .lean();
+    res.render("order", { orders });
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
   }
-
-  const dbPassword = user.password;
-
-  bcrypt.compare(password, dbPassword).then((match) => {
-    if (!match) {
-      res.status(400).json({ error: "Wrong username and password" });
-    }else {
-
-      const accessToken = createTokens(user)
-
-      res.cookie("acce-token", accessToken, {
-        maxAge: 60*60*24**30*1000 
-      })
-
-
-      res.json("Logged in");
-    }
-  });
-
-  
 });
 
+router.get("/order/success", (req, res) => {
+  res.render("order/success", { layout: "pages" });
+});
 
 module.exports = router;
