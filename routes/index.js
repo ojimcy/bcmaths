@@ -33,7 +33,7 @@ router.get("/order", async (req, res) => {
     const orders = await Order.find({ status: "processing" })
       .sort({ createdAt: "desc" })
       .lean();
-    res.render("order", { orders });
+    res.render("order/order", { orders });
   } catch (err) {
     console.error(err);
     res.render("error/500");

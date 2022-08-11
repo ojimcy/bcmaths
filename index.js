@@ -19,13 +19,13 @@ connectDB();
 const app = express();
 
 // handlebars helpers
-const { formatDate } = require("./helpers/hbs");
+const { formatDate} = require("./helpers/hbs");
 
 //Handlebars
 app.engine(
   ".hbs",
   engine({
-    helpers: { formatDate },
+    helpers: { formatDate},
     defaltLayout: "layout",
     handlebars: allowInsecurePrototypeAccess(Handlebars),
     extname: ".hbs",
@@ -49,10 +49,7 @@ app.use("/books/buy", require("./routes/index"));
 
 app.use("/buy", require("./routes/index"));
 
-app.use("/register", require("./routes/index"));
-app.use("/login", require("./routes/index"));
-
-app.use("/order", require("./routes/index"));
+app.use("/order/order", require("./routes/index"));
 
 app.use("order/success", require("./routes/index"));
 
