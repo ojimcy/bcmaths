@@ -11,6 +11,7 @@
           <th>Copies</th>
           <th>Order Date</th>
           <th>Status</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +25,9 @@
             <td>{{copies}}</td>
             <td>{{formatDate createdAt "MMM Do YYYY, h:mm:ss: a"}}</td>
             <td>{{status}}</td>
+            <td>
+              <a href="/order/:id" >Confirm</a>
+            </td>
           </tr>
         {{/each}}
       </tbody>

@@ -44,4 +44,18 @@ router.get("/order/success", (req, res) => {
   res.render("order/success", { layout: "pages" });
 });
 
+router.get("/order/summary/:id", async (req, res) => {
+  try {
+    const summary = await Order.findOne({ _id: req.params.id })
+      .lean();
+    if(!summary) {
+      res.render('error/404')
+    }
+    res.render("order/summary", { summary });
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
+  }
+});
+
 module.exports = router;

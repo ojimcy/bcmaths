@@ -52,6 +52,7 @@ app.use("/buy", require("./routes/index"));
 app.use("/order/order", require("./routes/index"));
 
 app.use("order/success", require("./routes/index"));
+app.use("order/summary", require("./routes/index"));
 
 const PORT = process.env.PORT;
 
