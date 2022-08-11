@@ -1,0 +1,40 @@
+<section class="container">
+  <div class="row">
+    <div class="card">
+      <h1 class="card-title">Order Summary</h1>
+      <div class="card-body summary-card">
+        <div class="row">
+          <div class="col-md-4">
+            <h6>Full Name</h6>
+            <p>{{preview.full_name}}</p>
+          </div>
+          <div class="col-md-4">
+            <h6>Phone Number</h6>
+            <p>{{preview.phone_number}}</p>
+          </div>
+          <div class="col-md-4">
+            <h6>Deliver Address</h6>
+            <p>{{preview.delivery_address}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <h6>Book Title(s)</h6>
+            <p>{{preview.bcm_jss}}</p>
+            <p>{{preview.bcm_jss1}}</p>
+            <p>{{preview.bcm_jss2}}</p>
+            <p>{{preview.bcm_jss3}}</p>
+          </div>
+          <div class="col-md-3">
+            <h6>Number of Copies</h6>
+            <p>{{preview.copies}}</p>
+          </div>
+        </div>
+        <row>
+            <a href="order/edit" class="btn btn-danger">Edit</a>
+            <a href="/order/success" class="btn btn-success" style="margin-left: 24%;">Comfirm</a>
+        </row>
+      </div>
+    </div>
+  </div>
+</section>

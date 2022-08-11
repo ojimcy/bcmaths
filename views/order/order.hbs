@@ -21,12 +21,12 @@
             <td>{{phone_number}}</td>
             <td>{{state}}</td>
             <td>{{delivery_address}}</td>
-            <td>{{book_title}}</td>
+            <td>{{bcm_jss}}<br/>{{bcm_jss1}}<br/>{{bcm_jss2}}<br/>{{bcm_jss3}}</td>
             <td>{{copies}}</td>
             <td>{{formatDate createdAt "MMM Do YYYY, h:mm:ss: a"}}</td>
             <td>{{status}}</td>
             <td>
-              <a href="/order/:id" >Confirm</a>
+              <a href="order/checkout/{{_id}}" >Checkout</a>
             </td>
           </tr>
         {{/each}}

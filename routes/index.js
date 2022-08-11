@@ -13,12 +13,34 @@ router.get("/books/buy", (req, res) => {
 });
 
 router.post("/books/buy", async (req, res) => {
+  let {
+    _id,
+    full_name,
+    phone_number,
+    state,
+    city,
+    delivery_address,
+    copies,
+    bcm_jss,
+    bcm_jss1,
+    bcm_jss2,
+    bcm_jss3,
+  } = req.body;
   try {
-    await Order.create(req.body);
-
-    const summary = await Order.findOne({ _id: req.params.id })
-      .lean();
-    res.render("order/summary", { summary });
+    await Order.create({
+      _id,
+      full_name,
+      phone_number,
+      state,
+      city,
+      delivery_address,
+      copies,
+      bcm_jss,
+      bcm_jss1,
+      bcm_jss2,
+      bcm_jss3,
+    });
+    res.redirect("order/success");
   } catch (err) {
     console.error(err);
     render("error/500");
@@ -36,7 +58,7 @@ router.get("/order", async (req, res) => {
     const orders = await Order.find({ status: "processing" })
       .sort({ createdAt: "desc" })
       .lean();
-    res.render("order/order", { orders });
+    res.render("order/order", { orders, layout: "pages" });
   } catch (err) {
     console.error(err);
     res.render("error/500");
@@ -47,14 +69,13 @@ router.get("/order/success", (req, res) => {
   res.render("order/success", { layout: "pages" });
 });
 
-router.get("/order/summary/:id", async (req, res) => {
+router.get("/order/checkout/:id", async (req, res) => {
   try {
-    const summary = await Order.findOne({ _id: req.params.id })
-      .lean();
-    if(!summary) {
-      res.render('error/404')
+    const checkout = await Order.findOne({ _id: req.params.id }).lean();
+    if (!checkout) {
+      res.render("error/404");
     }
-    res.render("order/summary", { summary });
+    res.render("order/checkout", { checkout, layout: "pages" });
   } catch (err) {
     console.error(err);
     res.render("error/500");

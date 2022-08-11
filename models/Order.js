@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const uuid = require('uuid')
+const uuid = require("uuid");
 
 const OrderSchema = new mongoose.Schema({
-  _id:{
+  _id: {
     type: String,
-        default: () => uuid.v4().replace(/\-/g, ""), 
-   },
+    default: () => uuid.v4().replace(/\-/g, ""),
+  },
   full_name: {
     type: String,
     require: true,
@@ -32,13 +32,25 @@ const OrderSchema = new mongoose.Schema({
     require: true,
   },
   status: {
-      type: String,
-      default: 'processing',
-      enum: ['processing', 'delivered'],
+    type: String,
+    default: "processing",
+    enum: ["processing", "delivered"],
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
+  },
+  bcm_jss: {
+    type: String,
+  },
+  bcm_jss1: {
+    type: String,
+  },
+  bcm_jss2: {
+    type: String,
+  },
+  bcm_jss3: {
+    type: String,
   },
 });
 
