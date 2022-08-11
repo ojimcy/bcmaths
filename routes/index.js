@@ -15,7 +15,10 @@ router.get("/books/buy", (req, res) => {
 router.post("/books/buy", async (req, res) => {
   try {
     await Order.create(req.body);
-    res.redirect("order/success");
+
+    const summary = await Order.findOne({ _id: req.params.id })
+      .lean();
+    res.render("order/summary", { summary });
   } catch (err) {
     console.error(err);
     render("error/500");
