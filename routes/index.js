@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Order = require("../models/Order");
+const User = require("../models/User");
 
 router.get("/", (req, res) => res.render("index"));
 router.get("/books", (req, res) => {
@@ -18,7 +19,6 @@ router.post("/books/buy", async (req, res) => {
     full_name,
     phone_number,
     state,
-    city,
     delivery_address,
     copies,
     bcm_jss,
@@ -32,13 +32,19 @@ router.post("/books/buy", async (req, res) => {
       full_name,
       phone_number,
       state,
-      city,
       delivery_address,
       copies,
       bcm_jss,
       bcm_jss1,
       bcm_jss2,
       bcm_jss3,
+    });
+    await User.create({
+      _id,
+      full_name,
+      phone_number,
+      state,
+      delivery_address,
     });
     res.redirect("order/success");
   } catch (err) {
