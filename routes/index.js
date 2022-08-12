@@ -49,7 +49,7 @@ router.post("/books/buy", async (req, res) => {
     res.redirect("order/success");
   } catch (err) {
     console.error(err);
-    render("error/500");
+    res.render("error/500");
   }
 });
 

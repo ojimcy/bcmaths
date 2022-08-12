@@ -32,10 +32,6 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  passcode: {
-    type: String,
-    unique: true,
-  }
 });
 
 module.exports = mongoose.model("User", UserSchema);
