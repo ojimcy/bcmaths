@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const dotenv = require("dotenv");
 const { engine } = require("express-handlebars");
+const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const Handlebars = require("handlebars");
 const {
@@ -19,13 +20,13 @@ connectDB();
 const app = express();
 
 // handlebars helpers
-const { formatDate} = require("./helpers/hbs");
+const { formatDate } = require("./helpers/hbs");
 
 //Handlebars
 app.engine(
   ".hbs",
   engine({
-    helpers: { formatDate},
+    helpers: { formatDate },
     defaltLayout: "layout",
     handlebars: allowInsecurePrototypeAccess(Handlebars),
     extname: ".hbs",
@@ -34,6 +35,13 @@ app.engine(
 app.set("view engine", ".hbs");
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Method override
+app.use(methodOverride(function (req, res) {
+  let method = req.body._method
+  delete req.body._method
+  return method
+}))
 
 // set static folder
 app.use(express.static(path.join(__dirname, "public")));
@@ -53,6 +61,7 @@ app.use("/order/order", require("./routes/index"));
 
 app.use("order/success", require("./routes/index"));
 app.use("order/summary/:id", require("./routes/index"));
+app.use("order/edit/:id", require("./routes/index"));
 
 const PORT = process.env.PORT;
 

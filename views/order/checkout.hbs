@@ -1,0 +1,70 @@
+<section class="container">
+  <div class="row">
+    <div class="card">
+      <h1 class="card-title">Order Summary</h1>
+      <div class="card-body summary-card">
+        <div class="row">
+          <div class="col-md-4">
+            <h6>Full Name</h6>
+            <p>{{order.full_name}}</p>
+          </div>
+          <div class="col-md-4">
+            <h6>Phone Number</h6>
+            <p>{{order.phone_number}}</p>
+          </div>
+          <div class="col-md-4">
+            <h6>Deliver Address</h6>
+            <p>{{order.delivery_address}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <h6>Book Title(s)</h6>
+            <span>{{order.bcm_jss}}</span>
+            <br />
+            <span>{{order.bcm_jss1}}</span>
+            <br />
+            <span>{{order.bcm_jss2}}</span>
+            <br />
+            <span>{{order.bcm_jss3}}</span>
+          </div>
+          <div class="col-md-3">
+            <h6>Number of Copies</h6>
+            <p>{{order.copies}}</p>
+          </div>
+        </div>
+        <div class="row" style="margin-left: 2%;">
+          <p class="text-muted">
+            Select the appropraite Action from the dropdown to process order!!!
+          </p>
+          <form class="login" method="POST" action="/books/buy">
+            <input type="hidden" name="_method" value="PUT" />
+            <p
+              class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
+            >
+              <label for="status">Proccess Order&nbsp;<span
+                  class="required"
+                >*</span></label>
+              <span class="password-input">
+                <select name="status" required>
+                  <option disabled selected>Select Action</option>
+                  <option value="processing">Processing</option>
+                  <option value="delivered">Completed</option>
+                </select>
+              </span>
+            </p>
+
+            <p class="form-row">
+              <input
+                type="submit"
+                class="woocommerce-Button button btn-success"
+                name="checkout"
+                value="Checkout"
+              />
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

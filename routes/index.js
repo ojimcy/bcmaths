@@ -94,7 +94,23 @@ router.get("/order/edit/:id", async (req, res) => {
   if (!order) {
     return res.render("error/404");
   } else {
-    res.render("order/checkout", { Order });
+    res.render("order/checkout", { order, layout: "pages" });
+  }
+});
+
+// process order
+router.put("/books/buy", async (req, res) => {
+  let order = await Order.findById(req.params.id).lean();
+
+  if (!order) {
+    res.render("error/404");
+  } else {
+    order = await Order.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    res.redirect("/order");
   }
 });
 
