@@ -75,16 +75,26 @@ router.get("/order/success", (req, res) => {
   res.render("order/success", { layout: "pages" });
 });
 
-router.get("/order/checkout/:id", async (req, res) => {
+router.get("/order/summary/:id", async (req, res) => {
   try {
-    const checkout = await Order.findOne({ _id: req.params.id }).lean();
-    if (!checkout) {
+    const summary = await Order.findOne({ _id: req.params.id }).lean();
+    if (!summary) {
       res.render("error/404");
     }
-    res.render("order/checkout", { checkout, layout: "pages" });
+    res.render("order/summary", { summary, layout: "pages" });
   } catch (err) {
     console.error(err);
     res.render("error/500");
+  }
+});
+
+router.get("/order/edit/:id", async (req, res) => {
+  const order = await Order.findOne({ _id: req.params.id }).lean();
+
+  if (!order) {
+    return res.render("error/404");
+  } else {
+    res.render("order/checkout", { Order });
   }
 });
 
