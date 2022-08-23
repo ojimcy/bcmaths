@@ -425,8 +425,8 @@
     <noscript><style>
         .woocommerce-product-gallery { opacity: 1 !important; }
       </style></noscript>
-    <link rel="icon" href="/images/favicon.jpg" sizes="32x32" />
-    <link rel="icon" href="/images/favicon.jpg" sizes="192x192" />
+    <link rel="icon" href="/images/BEST.png" sizes="32x32" />
+    <link rel="icon" href="/images/BEST.png" sizes="192x192" />
   </head>
 
   <body
@@ -437,8 +437,9 @@
       data-nav-color=""
     >
       <div class="navigation-logo is-slicknav-logo">
-        <a href="/" style="margin-left: 10px;">
-          <img src="/images/bcmlogo.jpg" alt="" />
+        <a href="/" style="margin-left: 10px;" class="logo">
+        BestChoiceMathematics
+          {{!-- <img src="/images/bcmlogo.jpg" alt="" /> --}}
         </a>
       </div>
       <nav
@@ -480,13 +481,17 @@
             id="menu-item-698"
             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-698"
           >
-            <a href="https://facebook.com/bestchoicemathematics"><i class="fab fa-facebook"></i></a>
+            <a href="https://facebook.com/bestchoicemathematics"><i
+                class="fab fa-facebook"
+              ></i></a>
           </li>
           <li
             id="menu-item-698"
             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-698"
           >
-            <a href="https://wa.me/2348069430990" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/2348069430990" target="_blank"><i
+                class="fab fa-whatsapp"
+              ></i></a>
           </li>
 
         </ul>
@@ -497,7 +502,7 @@
     <div class="MAIN-CONTENT">
       <div id="post-432" class="post-432 page type-page status-publish hentry">
         <div class="fw-page-builder-content">
-          {{!-- <section
+          {{! <section
             class="pos-r section-light is-parallax"
             id="shortcode-2e980c808a3363b30353f122aaa4f2dc"
           >
@@ -522,39 +527,81 @@
                 </div>
               </div>
             </div>
-          </section> --}}
+          </section> }}
 
           {{{body}}}
 
           <!-- end MAIN-CONTENT -->
-         
 
         </div>
       </div>
 
       <!-- end post -->
     </div>
-     <div class="footer-offset"></div>
-          <footer class="footer has-widgets">
-            <div class="overlay-color"></div>
+    <div class="footer-offset"></div>
+    <footer class="footer has-widgets">
+      <div class="overlay-color"></div>
 
-            <div class="overlay-pattern-3"></div>
+      <div class="overlay-pattern-3"></div>
 
-            <div class="container">
-              <div class="row">
-                <div class="clear"></div>
-                <div class="col-sm-12">
-                  <div class="copyright font-subheading">
-                    <p>© 2022 Best Choice Mathematics | All Right Reserved
-                    </p>
-                  </div>
-                </div>
-                <!-- end col-sm-12 -->
-              </div>
-              <!-- end row -->
+      <div class="container">
+        <div class="row">
+          <div class="clear"></div>
+          <div class="col-sm-12">
+            <div class="copyright font-subheading">
+              <p>© 2022 Best Choice Mathematics | All Right Reserved
+              </p>
             </div>
-            <!-- end container -->
-          </footer>
+          </div>
+          <!-- end col-sm-12 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </footer>
+
+    <script>
+      
+    function showInput() {
+      var checkBox = document.getElementById("bcm_jss");
+      var inputField = document.getElementById("bcm_jss_copies");
+      if (checkBox.checked == true){
+        bcm_jss_copies.style.display = "block";
+      } else {
+        bcm_jss_copies.style.display = "none";
+      }
+    } 
+    function showInput1() {
+      var checkBox = document.getElementById("bcm_jss1");
+      var inputField = document.getElementById("bcm_jss1_copies");
+      if (checkBox.checked == true){
+        bcm_jss1_copies.style.display = "block";
+      } else {
+        bcm_jss1_copies.style.display = "none";
+      }
+    }
+    function showInput2() {
+      var checkBox = document.getElementById("bcm_jss2");
+      var inputField = document.getElementById("bcm_jss2_copies");
+      if (checkBox.checked == true){
+        bcm_jss2_copies.style.display = "block";
+      } else {
+        bcm_jss2_copies.style.display = "none";
+      }
+    }
+    function showInput3() {
+      var checkBox = document.getElementById("bcm_jss3");
+      var inputField = document.getElementById("bcm_jss3_copies");
+      if (checkBox.checked == true){
+        bcm_jss3_copies.style.display = "block";
+      } else {
+        bcm_jss3_copies.style.display = "none";
+      }
+    }
+    
+    </script>
+
+
     <script type="text/javascript">
       (function () { var c = document.body.className; c =
       c.replace(/woocommerce-no-js/, "woocommerce-js"); document.body.className

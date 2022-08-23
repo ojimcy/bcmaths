@@ -52,6 +52,18 @@ const OrderSchema = new mongoose.Schema({
   bcm_jss3: {
     type: String,
   },
+  bcm_jss_copies: {
+    type: Number,
+  },
+  bcm_jss1_copies: {
+    type: Number,
+  },
+  bcm_jss2_copies: {
+    type: Number,
+  },
+  bcm_jss3_copies: {
+    type: Number,
+  },
 });
 
 module.exports = mongoose.model("Order", OrderSchema);

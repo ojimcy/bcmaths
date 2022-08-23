@@ -5982,14 +5982,7 @@
   .navigation-logo {
     display: table-cell;
     vertical-align: middle; }
-    .navigation-logo a {
-      display: inline-block;;
-      margin-right: 334px;
-      padding: 27px 0px; }
-      .navigation-logo a img {
-        max-height: 24px;
-        margin-top: -15px;
-        margin-bottom: -15px; }
+    
     .navigation-logo h1 {
       display: inline-block;
       font-size: 32px;
@@ -6003,7 +5996,7 @@
   
   .main-navigation-menu {
     display: table-cell;
-    padding: 0 222px;
+    padding: 0 333px;
     text-transform: uppercase;
     z-index: 100; }
     .main-navigation-menu li {
@@ -11225,4 +11218,10 @@
 
   .small_img img {
     min-height: 400px !important;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .main-navigation-menu {
+      padding-left: 216px !important;
+    }
   }

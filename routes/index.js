@@ -25,6 +25,10 @@ router.post("/books/buy", async (req, res) => {
     bcm_jss1,
     bcm_jss2,
     bcm_jss3,
+    bcm_jss_copies,
+    bcm_jss1_copies,
+    bcm_jss2_copies,
+    bcm_jss3_copies,
   } = req.body;
   try {
     await Order.create({
@@ -38,13 +42,10 @@ router.post("/books/buy", async (req, res) => {
       bcm_jss1,
       bcm_jss2,
       bcm_jss3,
-    });
-    await User.create({
-      _id,
-      full_name,
-      phone_number,
-      state,
-      delivery_address,
+      bcm_jss_copies,
+      bcm_jss1_copies,
+      bcm_jss2_copies,
+      bcm_jss3_copies,
     });
     res.redirect("order/success");
   } catch (err) {

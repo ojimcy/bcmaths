@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:wght@400;500&display=swap');
 /* Typography */
 body {
   font-family: Mulish;
@@ -860,4 +861,23 @@ mark {
 
 .is-nav-offset {
   margin-bottom: 35px !important;
+}
+
+#bcm_jss_copies {
+  width: 135px;
+}
+
+
+@media screen and (max-width: 1200px)  {
+  #bcm_jss_copies, .bcm_jss {
+    left: 8% !important;
+  }
+}
+
+.logo {
+  flex: 2 1 40rem;
+  font-family: 'Pattaya', sans-serif !important;
+  font-weight: 500;
+  color: #131c27 !important;
+  font-size: 27px;
 }
