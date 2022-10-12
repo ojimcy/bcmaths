@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 const Order = require("../models/Order");
-const User = require("../models/User");
 
 router.get("/", (req, res) => res.render("index"));
 router.get("/books", (req, res) => {
@@ -74,6 +73,19 @@ router.get("/order", async (req, res) => {
 
 router.get("/order/success", (req, res) => {
   res.render("order/success", { layout: "pages" });
+});
+
+router.get("/order/success/preview/:id", async (req, res) => {
+  try {
+    const preview = await Order.findOne({ _id: req.params.id }).lean();
+    if (!preview) {
+      res.render("error/404");
+    }
+    res.render("order/preview", { preview, layout: "pages" });
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
+  }
 });
 
 router.get("/order/summary/:id", async (req, res) => {
