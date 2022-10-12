@@ -863,6 +863,10 @@ mark {
   margin-bottom: 0 !important;
 }
 
+.is-nav-offset-pages {
+  margin-bottom: 120px !important;
+}
+
 #bcm_jss_copies {
   width: 135px;
 }
