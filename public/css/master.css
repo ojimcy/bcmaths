@@ -17730,7 +17730,7 @@ img[class*="wp-image-"],
     margin-bottom: 100px;
   }
   .woocommerce #reviews .star-rating {
-    font-size: 20px;
+    font-size: 20px; 
     width: 130px;
   }
   .woocommerce #reviews #comments ol.commentlist li .comment-text {
