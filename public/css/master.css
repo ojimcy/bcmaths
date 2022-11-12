@@ -9882,7 +9882,7 @@ textarea {
 
 .main-navigation-menu {
   display: table-cell;
-  padding: 0 333px;
+  padding: 0 265px;
   text-transform: uppercase;
   z-index: 100;
 }
@@ -17902,5 +17902,5 @@ img[class*="wp-image-"],
 
 
 .container {
-  max-width: 1490px !important;
+  max-width: 100% !important;
 }
